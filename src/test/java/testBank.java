@@ -1,8 +1,4 @@
-import org.junit.Test;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class testBank {
@@ -10,12 +6,12 @@ public class testBank {
     private static int i = 1;
 
     @BeforeEach
-    public static void startEach() {
+    public void startEach() {
         System.out.println("Начало теста № " + i);
     }
 
     @AfterEach
-    public static void finishEach() {
+    public void finishEach() {
         System.out.println("Конец теста № " + i++);
     }
 
@@ -34,8 +30,8 @@ public class testBank {
         Bank bank = new Bank();
         int month = 12;
         int sum = 20000;
-        double result = (double) sum / month;
-        double realResult = bank.monthlyPayment(sum, month);
+        int result = sum / month;
+        int realResult = bank.monthlyPayment(sum, month);
         assertEquals(result, realResult);
     }
 
